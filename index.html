@@ -4,219 +4,187 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SHEIKH FAMILY</title>
+<title>SHEIKH FAMILY | RZ7</title>
 
 <style>
 *{
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
-body{
+html,body{
     margin:0;
-    background:#090707;
-    color:#fff;
+    padding:0;
+    background:#080607;
+    color:white;
     font-family:Arial,Helvetica,sans-serif;
 }
 
-.wrap{
-    width:min(92%,520px);
+body{
+    min-height:100vh;
+}
+
+.container{
+    width:92%;
+    max-width:720px;
     margin:auto;
-    padding:22px 0 35px;
+    padding:25px 0 40px;
 }
 
 /* HEADER */
-header{
+
+.header{
     text-align:center;
-    padding:12px 0 25px;
+    padding:10px 0 30px;
 }
 
 .crown{
-    font-size:38px;
-    margin-bottom:5px;
+    font-size:42px;
+    margin-bottom:8px;
 }
 
-h1{
-    margin:4px 0;
-    font-size:28px;
-    letter-spacing:2px;
+.title{
+    font-size:30px;
     font-weight:800;
-}
-
-.sub{
-    color:#d7b8b8;
-    font-size:12px;
     letter-spacing:2px;
-    margin-top:12px;
+    margin:0;
 }
 
-/* CARDS */
-.cards{
+.rz7{
+    color:#d9a9b3;
+    font-size:24px;
+    font-weight:700;
+    margin-top:10px;
+}
+
+.welcome{
+    margin-top:15px;
+    color:#bca9ac;
+    font-size:13px;
+    letter-spacing:3px;
+}
+
+/* GROUP CARDS */
+
+.groups{
     display:flex;
     flex-direction:column;
-    gap:28px;
+    gap:25px;
 }
 
 .card{
-    display:block;
-    text-decoration:none;
-    color:#fff;
-    background:#12090b;
-    border:1px solid #7e3b45;
-    border-radius:17px;
+    background:#13090c;
+    border:1px solid #7d3544;
+    border-radius:18px;
     overflow:hidden;
-    box-shadow:0 10px 28px #0008;
+    box-shadow:0 8px 30px rgba(0,0,0,.5);
 }
 
-/* FULL BANNER */
-.card img{
+/* IMPORTANT IMAGE */
+
+.banner{
     display:block;
     width:100%;
     height:auto;
-    aspect-ratio:2 / 1;
+    min-height:180px;
     object-fit:cover;
-    object-position:center;
-    background:#12090b;
 }
 
-/* CARD INFO */
-.card-info{
+.card-bottom{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    padding:14px;
-    gap:8px;
+    justify-content:space-between;
+    gap:10px;
+    padding:15px;
 }
 
-.card-info span{
-    font-weight:700;
-    font-size:14px;
-    white-space:nowrap;
+.group-name{
+    font-size:15px;
+    font-weight:800;
 }
 
-.card-info b{
+.join{
+    display:inline-block;
+    background:#982d49;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:25px;
     font-size:11px;
-    background:#8b2940;
-    border-radius:999px;
-    padding:10px 14px;
+    font-weight:800;
     white-space:nowrap;
 }
 
-/* RULE BUTTON */
-.rules-btn{
+.join:active{
+    transform:scale(.97);
+}
+
+/* RULES */
+
+.rules{
     width:100%;
     margin-top:30px;
-    border:1px solid #8f4652;
-    background:#351217;
-    color:#fff;
-    border-radius:13px;
     padding:15px;
+    border:1px solid #7d3544;
+    border-radius:14px;
+    background:#241014;
+    color:white;
+    font-weight:800;
     font-size:14px;
-    font-weight:700;
-    letter-spacing:1px;
-}
-
-/* NOTE */
-.note{
-    text-align:center;
-    color:#a99191;
-    font-size:11px;
-    line-height:1.7;
-    margin:20px 8px;
 }
 
 /* FOOTER */
-footer{
+
+.note{
     text-align:center;
-    color:#6f5d5d;
+    color:#958488;
+    font-size:11px;
+    line-height:1.7;
+    margin:22px 5px;
+}
+
+.footer{
+    text-align:center;
+    color:#66595c;
     font-size:10px;
-    margin-top:22px;
-}
-
-/* MODAL */
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:#000c;
-    z-index:10;
-    padding:18px;
-    overflow:auto;
-}
-
-.modal-box{
-    max-width:520px;
-    margin:25px auto;
-    background:#160b0d;
-    border:1px solid #8f4652;
-    border-radius:16px;
-    padding:18px;
-}
-
-.modal-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.modal h2{
-    margin:0;
-    font-size:20px;
-}
-
-.close{
-    background:none;
-    border:0;
-    color:#fff;
-    font-size:28px;
-}
-
-ol{
-    padding-left:22px;
-    color:#eadada;
-}
-
-li{
-    margin:11px 0;
-    font-size:13px;
-    line-height:1.5;
-}
-
-.disclaimer{
-    margin-top:18px;
-    padding:12px;
-    border-radius:10px;
-    background:#2b1116;
-    color:#e8caca;
-    font-size:12px;
-    line-height:1.5;
+    margin-top:25px;
 }
 
 /* MOBILE */
-@media(max-width:400px){
 
-    .wrap{
+@media(max-width:450px){
+
+    .container{
         width:94%;
     }
 
-    h1{
-        font-size:25px;
+    .title{
+        font-size:27px;
     }
 
-    .card-info{
-        padding:13px 12px;
+    .rz7{
+        font-size:22px;
     }
 
-    .card-info span{
-        font-size:12px;
+    .welcome{
+        font-size:11px;
+        letter-spacing:2px;
     }
 
-    .card-info b{
+    .banner{
+        min-height:160px;
+    }
+
+    .card-bottom{
+        padding:13px;
+    }
+
+    .group-name{
+        font-size:13px;
+    }
+
+    .join{
+        padding:11px 15px;
         font-size:10px;
-        padding:8px 11px;
     }
 }
 </style>
@@ -224,230 +192,253 @@ li{
 
 <body>
 
-<div class="wrap">
+<div class="container">
 
-<header>
+<!-- HEADER -->
+
+<div class="header">
 
     <div class="crown">♛</div>
 
-    <h1>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬</h1>
+    <h1 class="title">
+        SHEIKH FAMILY
+    </h1>
 
-    <div class="sub">
+    <div class="rz7">
+        RZ7
+    </div>
+
+    <div class="welcome">
         WELCOME TO OUR COMMUNITY 🐪❤️
     </div>
 
-</header>
+</div>
 
 
-<div class="cards">
+<!-- GROUPS -->
+
+<div class="groups">
 
 <!-- GROUP 1 -->
-<a class="card"
+
+<div class="card">
+
+<img
+class="banner"
+src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+alt="Sheikh Family 1"
+loading="eager">
+
+<div class="card-bottom">
+
+<div class="group-name">
+SHEIKH FAMILY 🏠 1️⃣
+</div>
+
+<a
+class="join"
 href="https://chat.whatsapp.com/IkIlGmksVOYFe2eL4fn1Q6"
-target="_blank"
-rel="noopener">
-
-    <img
-    src="./sheikh_family_banner.jpg"
-    alt="Sheikh Family 1">
-
-    <div class="card-info">
-        <span>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬🏠1️⃣</span>
-        <b>JOIN GROUP ↗</b>
-    </div>
-
+target="_blank">
+WHATSAPP ↗
 </a>
+
+</div>
+</div>
 
 
 <!-- GROUP 2 -->
-<a class="card"
+
+<div class="card">
+
+<img
+class="banner"
+src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+alt="Sheikh Family 2"
+loading="lazy">
+
+<div class="card-bottom">
+
+<div class="group-name">
+SHEIKH FAMILY 🏠 2️⃣
+</div>
+
+<a
+class="join"
 href="https://chat.whatsapp.com/DoUU9uOBNMY8SUis111zYH"
-target="_blank"
-rel="noopener">
-
-    <img
-    src="./sheikh_family_banner.jpg"
-    alt="Sheikh Family 2">
-
-    <div class="card-info">
-        <span>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬🏠2️⃣</span>
-        <b>JOIN GROUP ↗</b>
-    </div>
-
+target="_blank">
+WHATSAPP ↗
 </a>
+
+</div>
+</div>
 
 
 <!-- GROUP 3 -->
-<a class="card"
+
+<div class="card">
+
+<img
+class="banner"
+src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+alt="Sheikh Family 3"
+loading="lazy">
+
+<div class="card-bottom">
+
+<div class="group-name">
+SHEIKH FAMILY 🏠 3️⃣
+</div>
+
+<a
+class="join"
 href="https://chat.whatsapp.com/LGDmFh4OsXpFRJHGfsH8gB"
-target="_blank"
-rel="noopener">
-
-    <img
-    src="./sheikh_family_banner.jpg"
-    alt="Sheikh Family 3">
-
-    <div class="card-info">
-        <span>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬🏠3️⃣</span>
-        <b>JOIN GROUP ↗</b>
-    </div>
-
+target="_blank">
+WHATSAPP ↗
 </a>
+
+</div>
+</div>
 
 
 <!-- GROUP 4 -->
-<a class="card"
+
+<div class="card">
+
+<img
+class="banner"
+src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+alt="Sheikh Family 4"
+loading="lazy">
+
+<div class="card-bottom">
+
+<div class="group-name">
+SHEIKH FAMILY 🏠 4️⃣
+</div>
+
+<a
+class="join"
 href="https://chat.whatsapp.com/EWrQ3ec0qxE91Hh9aXCTUo"
-target="_blank"
-rel="noopener">
-
-    <img
-    src="./sheikh_family_banner.jpg"
-    alt="Sheikh Family 4">
-
-    <div class="card-info">
-        <span>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬🏠4️⃣</span>
-        <b>JOIN GROUP ↗</b>
-    </div>
-
+target="_blank">
+WHATSAPP ↗
 </a>
+
+</div>
+</div>
 
 
 <!-- GROUP 5 -->
-<a class="card"
+
+<div class="card">
+
+<img
+class="banner"
+src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+alt="Sheikh Family 5"
+loading="lazy">
+
+<div class="card-bottom">
+
+<div class="group-name">
+SHEIKH FAMILY 🏠 5️⃣
+</div>
+
+<a
+class="join"
 href="https://chat.whatsapp.com/GNlRc9NnQeOJTZbI5FS748"
-target="_blank"
-rel="noopener">
-
-    <img
-    src="./sheikh_family_banner.jpg"
-    alt="Sheikh Family 5">
-
-    <div class="card-info">
-        <span>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬🏠5️⃣</span>
-        <b>JOIN GROUP ↗</b>
-    </div>
-
+target="_blank">
+WHATSAPP ↗
 </a>
+
+</div>
+</div>
 
 
 <!-- GROUP 6 -->
-<a class="card"
+
+<div class="card">
+
+<img
+class="banner"
+src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+alt="Sheikh Family 6"
+loading="lazy">
+
+<div class="card-bottom">
+
+<div class="group-name">
+SHEIKH FAMILY 🏠 6️⃣
+</div>
+
+<a
+class="join"
 href="https://chat.whatsapp.com/LEtO1ApHi6t0tpDXrdcEne"
-target="_blank"
-rel="noopener">
-
-    <img
-    src="./sheikh_family_banner.jpg"
-    alt="Sheikh Family 6">
-
-    <div class="card-info">
-        <span>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬🏠6️⃣</span>
-        <b>JOIN GROUP ↗</b>
-    </div>
-
+target="_blank">
+WHATSAPP ↗
 </a>
+
+</div>
+</div>
 
 
 <!-- GROUP 7 -->
-<a class="card"
+
+<div class="card">
+
+<img
+class="banner"
+src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+alt="Sheikh Family 7"
+loading="lazy">
+
+<div class="card-bottom">
+
+<div class="group-name">
+SHEIKH FAMILY 🏠 7️⃣
+</div>
+
+<a
+class="join"
 href="https://chat.whatsapp.com/FJdN7uWVuwk5ScQSN8wkjp"
-target="_blank"
-rel="noopener">
-
-    <img
-    src="./sheikh_family_banner.jpg"
-    alt="Sheikh Family 7">
-
-    <div class="card-info">
-        <span>𝗦𝗛𝗘𝗜𝗞𝗛 𝗙𝗔𝗠𝗜𝗟𝗬🏠7️⃣</span>
-        <b>JOIN GROUP ↗</b>
-    </div>
-
+target="_blank">
+WHATSAPP ↗
 </a>
+
+</div>
+</div>
 
 </div>
 
 
 <!-- RULES -->
+
 <button
-class="rules-btn"
-onclick="document.getElementById('rules').style.display='block'">
-
-📜 RULES
-
+class="rules"
+onclick="alert(
+'RULES ⚠️\\n\\n' +
+'1. No posting links except admins.\\n\\n' +
+'2. No promotions or advertisements.\\n\\n' +
+'3. Do not spam.\\n\\n' +
+'4. Do not fight with other members.\\n\\n' +
+'5. No fake news or rumours.\\n\\n' +
+'6. Respect all members.'
+)">
+📜 VIEW GROUP RULES
 </button>
 
 
 <div class="note">
 
-𝗕𝗲𝘁𝘁𝗲𝗿 𝘁𝗼 𝗠𝘂𝘁𝗲 𝗡𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗼𝗳 𝗚𝗿𝗼𝘂𝗽/𝗔𝗹𝘄𝗮𝘆𝘀
-
-<br><br>
-
-For inquiries: wa.me/15792640711
+Better to mute group notifications if needed.<br>
+Please respect the group rules and other members.
 
 </div>
 
 
-<footer>
-
-© 2026 SHEIKH FAMILY. All Rights Reserved.
-
-</footer>
-
+<div class="footer">
+© 2026 SHEIKH FAMILY | RZ7
 </div>
 
-
-<!-- RULES MODAL -->
-<div
-class="modal"
-id="rules"
-onclick="if(event.target===this)this.style.display='none'">
-
-<div class="modal-box">
-
-<div class="modal-head">
-
-<h2>📜 RULES ⚠️</h2>
-
-<button
-class="close"
-onclick="document.getElementById('rules').style.display='none'">
-
-×
-
-</button>
-
-</div>
-
-<ol>
-
-<li>𝗗𝗼 𝗻𝗼𝘁 𝗣𝗼𝘀𝘁𝗶𝗻𝗴 𝗔𝗻𝘆 𝗟𝗶𝗻𝗸𝘀 (𝗢𝗻𝗹𝘆 𝗔𝗱𝗺𝗶𝗻𝘀)</li>
-
-<li>𝗡𝗼 𝗣𝗿𝗼𝗺𝗼𝘁𝗶𝗼𝗻𝘀, 𝗔𝗱𝘃𝗲𝗿𝘁𝗶𝘀𝗲𝗺𝗲𝗻𝘁𝘀, 𝗼𝗿 𝗦𝗲𝗹𝗳-𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗦𝗵𝗮𝗿𝗶𝗻𝗴</li>
-
-<li>𝗗𝗼𝗻'𝘁 𝗔𝘀𝗸 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽</li>
-
-<li>𝗗𝗼𝗻'𝘁 𝗨𝘀𝗲 𝗕𝗮𝗱 𝗖𝗼𝗺𝗺𝗲𝗻𝘁𝘀</li>
-
-<li>𝗗𝗼𝗻'𝘁 𝗦𝗽𝗮𝗺 𝗦𝘁𝗶𝗰𝗸𝗲𝗿𝘀, 𝗥𝗲𝗽𝗲𝗮𝘁𝗲𝗱 𝗧𝗲𝘅𝘁, 𝗼𝗿 𝗙𝗹𝗼𝗼𝗱𝗶𝗻𝗴</li>
-
-<li>𝗚𝗶𝘃𝗶𝗻𝗴 𝗟𝗶𝗻𝗸𝘀 𝗧𝗼 𝗠𝗲𝗺𝗯𝗲𝗿𝘀 𝗧𝗵𝗿𝗼𝘂𝗴𝗵 𝗗𝗠 𝗔𝗿𝗲 𝗦𝘁𝗿𝗶𝗰𝘁𝗹𝘆 𝗣𝗿𝗼𝗵𝗶𝗯𝗶𝘁𝗲𝗱</li>
-
-<li>𝗗𝗼𝗻'𝘁 𝗙𝗶𝗴𝗵𝘁 𝗪𝗶𝘁𝗵 𝗢𝘁𝗵𝗲𝗿 𝗠𝗲𝗺𝗯𝗲𝗿𝘀</li>
-
-<li>𝗙𝗶𝗴𝗵𝘁𝗶𝗻𝗴 𝗜𝗻 𝗚𝗿𝗼𝘂𝗽 𝗪𝗶𝗹𝗹 𝗟𝗲𝗮𝗱 𝗧𝗼 𝗥𝗲𝗺𝗼𝘃𝗮𝗹</li>
-
-<li>𝗡𝗼 𝗙𝗮𝗸𝗲 𝗡𝗲𝘄𝘀 𝗼𝗿 𝗥𝘂𝗺𝗼𝗿𝘀</li>
-
-</ol>
-
-<div class="disclaimer">
-⚠️ Please respect the group rules and other members.
-</div>
-
-</div>
 </div>
 
 </body>
