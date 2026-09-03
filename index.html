@@ -11,149 +11,416 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* =========================
+/* =====================================================
    BASIC RESET
-========================= */
+===================================================== */
 
 *{
     box-sizing:border-box;
-}
-
-html,
-body{
     margin:0;
     padding:0;
-    min-height:100%;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
+    min-height:100vh;
+
     background:
         #080607
         url("https://adhiit4.github.io/sheikh-family/sheikh_family_bg.jpg")
         center center / cover fixed no-repeat;
 
-    color:white;
+    color:#fff;
     font-family:Arial,Helvetica,sans-serif;
+
+    overflow-x:hidden;
 }
 
 
-/* =========================
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5,2,3,.28),
+            rgba(5,2,3,.58)
+        );
+
+    pointer-events:none;
+    z-index:-1;
+}
+
+
+/* =====================================================
+   SUBTLE PARTICLES
+===================================================== */
+
+.particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.particle{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:#c59a68;
+    border-radius:50%;
+
+    opacity:0;
+
+    animation:floatParticle 7s infinite ease-in-out;
+}
+
+.particle:nth-child(1){
+    left:10%;
+    top:30%;
+    animation-delay:0s;
+}
+
+.particle:nth-child(2){
+    left:25%;
+    top:70%;
+    animation-delay:1.5s;
+}
+
+.particle:nth-child(3){
+    left:45%;
+    top:20%;
+    animation-delay:3s;
+}
+
+.particle:nth-child(4){
+    left:65%;
+    top:65%;
+    animation-delay:2s;
+}
+
+.particle:nth-child(5){
+    left:82%;
+    top:35%;
+    animation-delay:4s;
+}
+
+.particle:nth-child(6){
+    left:92%;
+    top:75%;
+    animation-delay:1s;
+}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:translateY(20px) scale(.5);
+        opacity:0;
+    }
+
+    30%{
+        opacity:.5;
+    }
+
+    70%{
+        opacity:.25;
+    }
+
+    100%{
+        transform:translateY(-100px) scale(1);
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
    MAIN CONTAINER
-========================= */
+===================================================== */
 
 .container{
+    position:relative;
+    z-index:1;
+
     width:92%;
     max-width:720px;
+
     margin:0 auto;
-    padding:20px 0 30px;
+
+    padding:20px 0 35px;
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header{
     text-align:center;
-    padding:10px 0 30px;
+
+    padding:12px 0 32px;
+
+    animation:headerEnter 1s ease both;
 }
+
+@keyframes headerEnter{
+
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* Crown */
 
 .crown{
     font-size:42px;
+
     margin-bottom:8px;
-    text-shadow:0 0 15px rgba(152,45,73,.7);
+
+    color:#f4eee8;
+
+    text-shadow:
+        0 0 8px rgba(197,154,104,.25),
+        0 0 18px rgba(152,45,73,.35);
+
+    animation:crownGlow 3s ease-in-out infinite;
 }
+
+@keyframes crownGlow{
+
+    0%,100%{
+        transform:translateY(0);
+        opacity:.9;
+    }
+
+    50%{
+        transform:translateY(-3px);
+        opacity:1;
+    }
+}
+
+
+/* Title */
 
 .title{
+    font-family:Georgia,"Times New Roman",serif;
+
     font-size:30px;
+
     font-weight:800;
+
     letter-spacing:2px;
+
     margin:0;
+
+    color:#fff;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.65);
 }
 
+
+/* RZ7 */
+
 .rz7{
-    color:#D4AF37;
-    font-size:24px;
-    font-family:Georgia, "Times New Roman", serif;
-    font-weight:900;
-    margin-top:10px;
+    margin-top:9px;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:25px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    color:#5a1028;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.15),
+        0 0 12px rgba(90,16,40,.35);
 }
+
+
+/* Welcome */
 
 .welcome{
     margin-top:15px;
+
     color:#d0bfc3;
+
     font-size:13px;
+
     letter-spacing:3px;
+
+    font-weight:500;
 }
 
 
-/* =========================
-   GROUPS
-========================= */
+/* =====================================================
+   GROUP LIST
+===================================================== */
 
 .groups{
     display:flex;
+
     flex-direction:column;
+
     gap:25px;
 }
 
 
-/* =========================
+/* =====================================================
    GROUP CARD
-========================= */
+===================================================== */
 
 .card{
-    background:rgba(19,9,12,.94);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,10,14,.96),
+            rgba(12,5,8,.96)
+        );
+
     border:1px solid #7d3544;
+
     border-radius:18px;
+
     overflow:hidden;
 
     box-shadow:
         0 8px 30px rgba(0,0,0,.55),
         0 0 15px rgba(125,53,68,.12);
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 }
 
 
-/* =========================
+/* Scroll reveal */
+
+.card.show{
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+/* Desktop hover */
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#9a5364;
+
+    box-shadow:
+        0 14px 38px rgba(0,0,0,.65),
+        0 0 22px rgba(125,53,68,.22);
+}
+
+
+/* =====================================================
    BANNER
-========================= */
+===================================================== */
 
 .banner{
     display:block;
+
     width:100%;
+
     height:auto;
+
     object-fit:cover;
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+}
+
+.card:hover .banner{
+    transform:scale(1.015);
+
+    filter:brightness(1.03);
 }
 
 
-/* =========================
+/* =====================================================
    CARD BOTTOM
-========================= */
+===================================================== */
 
 .card-bottom{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:12px;
+
     padding:15px;
 }
 
+
+/* Group name */
+
 .group-name{
+    font-family:Georgia,"Times New Roman",serif;
+
     font-size:15px;
-    font-weight:800;
+
+    font-weight:700;
+
     line-height:1.4;
+
+    color:#fff;
 }
 
 
-/* =========================
+/* =====================================================
    WHATSAPP BUTTON
-========================= */
+===================================================== */
 
 .join{
     display:inline-block;
 
-    background:#982d49;
-    color:white;
+    background:
+        linear-gradient(
+            135deg,
+            #982d49,
+            #7c2039
+        );
+
+    color:#fff;
 
     text-decoration:none;
 
@@ -162,9 +429,15 @@ body{
     border-radius:25px;
 
     font-size:11px;
+
     font-weight:800;
 
+    letter-spacing:.3px;
+
     white-space:nowrap;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.3);
 
     transition:
         transform .2s ease,
@@ -172,74 +445,264 @@ body{
         box-shadow .2s ease;
 }
 
+
 .join:hover{
-    background:#b53b5b;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ad3a58,
+            #8d2642
+        );
 
     box-shadow:
-        0 0 15px rgba(181,59,91,.4);
+        0 0 18px rgba(181,59,91,.38);
 
     transform:translateY(-2px);
 }
 
+
 .join:active{
-    transform:scale(.96);
+    transform:scale(.95);
 }
 
 
-/* =========================
-   RULES
-========================= */
+/* =====================================================
+   RULES BUTTON
+===================================================== */
 
 .rules{
+
     display:block;
 
     width:100%;
 
     margin-top:30px;
-    padding:15px;
+
+    padding:16px;
 
     border:1px solid #7d3544;
+
     border-radius:14px;
 
-    background:#241014;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(36,16,20,.97),
+            rgba(20,8,12,.97)
+        );
+
+    color:#fff;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-weight:700;
+
+    font-size:14px;
+
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
+
+    transition:
+        .25s ease;
+}
+
+
+.rules:hover{
+
+    background:#32151d;
+
+    border-color:#a84a61;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.45);
+}
+
+
+/* =====================================================
+   CUSTOM RULES MODAL
+===================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.78);
+
+    backdrop-filter:blur(5px);
+
+    -webkit-backdrop-filter:blur(5px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+    z-index:1000;
+}
+
+
+.modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+
+.modal-box{
+
+    width:100%;
+
+    max-width:470px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid #8c3d52;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c0b10,
+            #0c0508
+        );
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.75),
+        0 0 25px rgba(125,53,68,.2);
+
+    transform:scale(.92) translateY(15px);
+
+    transition:
+        transform .3s ease;
+}
+
+
+.modal.active .modal-box{
+
+    transform:scale(1) translateY(0);
+}
+
+
+.modal-title{
+
+    text-align:center;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:23px;
+
+    color:#fff;
+
+    margin-bottom:20px;
+}
+
+
+.rule-list{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:13px;
+}
+
+
+.rule-list li{
+
+    padding:12px 13px;
+
+    border-left:3px solid #7d3544;
+
+    border-radius:7px;
+
+    background:rgba(255,255,255,.035);
+
+    color:#e5dfe1;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+.close-rules{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:12px;
+
+    border:1px solid #7d3544;
+
+    border-radius:25px;
+
+    background:#5a1028;
 
     color:white;
 
     font-weight:800;
-    font-size:14px;
 
     cursor:pointer;
 
     transition:.2s ease;
 }
 
-.rules:hover{
-    background:#32151d;
-    border-color:#a84a61;
+
+.close-rules:hover{
+
+    background:#79203a;
 }
 
 
-/* =========================
+/* =====================================================
    NOTE
-========================= */
+===================================================== */
 
 .note{
+
     text-align:center;
 
     color:#958488;
 
     font-size:11px;
+
     line-height:1.7;
 
     margin:22px 5px;
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer{
+
     text-align:center;
 
     color:#66595c;
@@ -250,45 +713,171 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+.top-button{
+
+    position:fixed;
+
+    right:18px;
+
+    bottom:18px;
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:1px solid #7d3544;
+
+    background:rgba(20,7,11,.92);
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s ease;
+
+    z-index:500;
+}
+
+
+.top-button.visible{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+
+.top-button:hover{
+
+    background:#5a1028;
+
+    border-color:#a84a61;
+
+    transform:translateY(-3px);
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:450px){
 
     .container{
+
         width:94%;
+
         padding-top:15px;
     }
 
+
     .title{
+
         font-size:27px;
     }
 
+
     .rz7{
+
         font-size:22px;
     }
 
+
     .welcome{
+
         font-size:11px;
+
         letter-spacing:2px;
     }
 
+
     .card{
+
         border-radius:15px;
     }
 
+
     .card-bottom{
+
         padding:13px;
     }
 
+
     .group-name{
+
         font-size:13px;
     }
 
+
     .join{
+
         padding:11px 15px;
+
         font-size:10px;
+    }
+
+
+    .modal-box{
+
+        padding:20px;
+
+        border-radius:17px;
+    }
+
+
+    .modal-title{
+
+        font-size:20px;
+    }
+
+
+    .rule-list li{
+
+        font-size:12px;
+
+        padding:10px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION FOR ACCESSIBILITY
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
     }
 
 }
@@ -300,12 +889,30 @@ body{
 
 <body>
 
+
+<!-- =====================================================
+     PARTICLES
+===================================================== -->
+
+<div class="particles">
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
+</div>
+
+
+
 <div class="container">
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <div class="header">
 
@@ -327,9 +934,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================================
      GROUP LIST
-========================= -->
+===================================================== -->
 
 <div class="groups">
 
@@ -593,30 +1200,23 @@ body{
 
 
 
-<!-- =========================
-     RULES
-========================= -->
+<!-- =====================================================
+     RULES BUTTON
+===================================================== -->
 
 <button
     class="rules"
-    onclick="alert(
-'RULES ⚠️\n\n' +
-'1. No posting links except admins.\n\n' +
-'2. No promotions or advertisements.\n\n' +
-'3. Do not spam.\n\n' +
-'4. Do not fight with other members.\n\n' +
-'5. No fake news or rumours.\n\n' +
-'6. Respect all members.'
-)"
+    id="rulesButton"
+    type="button"
 >
     📜 VIEW GROUP RULES
 </button>
 
 
 
-<!-- =========================
+<!-- =====================================================
      NOTE
-========================= -->
+===================================================== -->
 
 <div class="note">
 
@@ -628,9 +1228,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <div class="footer">
 
@@ -640,6 +1240,250 @@ body{
 
 
 </div>
+
+
+
+<!-- =====================================================
+     RULES MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="rulesModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="rulesTitle"
+>
+
+    <div class="modal-box">
+
+        <div
+            class="modal-title"
+            id="rulesTitle"
+        >
+            RULES ⚠️
+        </div>
+
+
+        <ul class="rule-list">
+
+            <li>
+                <strong>1.</strong>
+                No posting links except admins.
+            </li>
+
+            <li>
+                <strong>2.</strong>
+                No promotions or advertisements.
+            </li>
+
+            <li>
+                <strong>3.</strong>
+                Do not spam.
+            </li>
+
+            <li>
+                <strong>4.</strong>
+                Do not fight with other members.
+            </li>
+
+            <li>
+                <strong>5.</strong>
+                No fake news or rumours.
+            </li>
+
+            <li>
+                <strong>6.</strong>
+                Respect all members.
+            </li>
+
+        </ul>
+
+
+        <button
+            class="close-rules"
+            id="closeRules"
+            type="button"
+        >
+            CLOSE
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+    class="top-button"
+    id="topButton"
+    type="button"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+
+<script>
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(
+    (entries, observer) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    },
+    {
+        threshold:0.12
+    }
+);
+
+
+cards.forEach(card => {
+
+    observer.observe(card);
+
+});
+
+
+
+/* =====================================================
+   RULES MODAL
+===================================================== */
+
+const rulesButton =
+    document.getElementById("rulesButton");
+
+const rulesModal =
+    document.getElementById("rulesModal");
+
+const closeRules =
+    document.getElementById("closeRules");
+
+
+rulesButton.addEventListener(
+    "click",
+    () => {
+
+        rulesModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    }
+);
+
+
+closeRules.addEventListener(
+    "click",
+    closeRulesModal
+);
+
+
+rulesModal.addEventListener(
+    "click",
+    (event) => {
+
+        if(event.target === rulesModal){
+
+            closeRulesModal();
+
+        }
+
+    }
+);
+
+
+function closeRulesModal(){
+
+    rulesModal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+
+/* =====================================================
+   ESCAPE KEY CLOSE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if(event.key === "Escape"){
+
+            closeRulesModal();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+const topButton =
+    document.getElementById("topButton");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if(window.scrollY > 500){
+
+            topButton.classList.add("visible");
+
+        }else{
+
+            topButton.classList.remove("visible");
+
+        }
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+topButton.addEventListener(
+    "click",
+    () => {
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
+
+</script>
+
 
 </body>
 </html>
