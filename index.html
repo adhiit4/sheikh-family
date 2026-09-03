@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>SHEIKH FAMILY | RZ7</title>
 
 <style>
 
+/* =========================
+   BASIC RESET
+========================= */
+
 *{
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
     margin:0;
     padding:0;
-    background:#080607 url("https://adhit4.github.io/sheikh-family/sheikh_family_bg.jpg") center center / cover fixed no-repeat;
+    min-height:100%;
+}
+
+body{
+    background:
+        #080607
+        url("https://adhiit4.github.io/sheikh-family/sheikh_family_bg.jpg")
+        center center / cover fixed no-repeat;
+
     color:white;
     font-family:Arial,Helvetica,sans-serif;
 }
 
-body{
-    min-height:100vh;
-}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container{
     width:92%;
     max-width:720px;
-    margin:auto;
+    margin:0 auto;
+    padding:20px 0 30px;
 }
 
-</style> 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header{
     text-align:center;
@@ -42,6 +61,7 @@ body{
 .crown{
     font-size:42px;
     margin-bottom:8px;
+    text-shadow:0 0 15px rgba(152,45,73,.7);
 }
 
 .title{
@@ -60,12 +80,15 @@ body{
 
 .welcome{
     margin-top:15px;
-    color:#bca9ac;
+    color:#d0bfc3;
     font-size:13px;
     letter-spacing:3px;
 }
 
-/* GROUP CARDS */
+
+/* =========================
+   GROUPS
+========================= */
 
 .groups{
     display:flex;
@@ -73,90 +96,168 @@ body{
     gap:25px;
 }
 
+
+/* =========================
+   GROUP CARD
+========================= */
+
 .card{
-    background:#13090c;
+    background:rgba(19,9,12,.94);
     border:1px solid #7d3544;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:0 8px 30px rgba(0,0,0,.5);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.55),
+        0 0 15px rgba(125,53,68,.12);
 }
 
-/* IMPORTANT IMAGE */
+
+/* =========================
+   BANNER
+========================= */
 
 .banner{
     display:block;
     width:100%;
     height:auto;
-    min-height:180px;
     object-fit:cover;
 }
+
+
+/* =========================
+   CARD BOTTOM
+========================= */
 
 .card-bottom{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:10px;
+    gap:12px;
     padding:15px;
 }
 
 .group-name{
     font-size:15px;
     font-weight:800;
+    line-height:1.4;
 }
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
 
 .join{
     display:inline-block;
+
     background:#982d49;
     color:white;
+
     text-decoration:none;
+
     padding:12px 18px;
+
     border-radius:25px;
+
     font-size:11px;
     font-weight:800;
+
     white-space:nowrap;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.join:hover{
+    background:#b53b5b;
+
+    box-shadow:
+        0 0 15px rgba(181,59,91,.4);
+
+    transform:translateY(-2px);
 }
 
 .join:active{
-    transform:scale(.97);
+    transform:scale(.96);
 }
 
-/* RULES */
+
+/* =========================
+   RULES
+========================= */
 
 .rules{
+    display:block;
+
     width:100%;
+
     margin-top:30px;
     padding:15px;
+
     border:1px solid #7d3544;
     border-radius:14px;
+
     background:#241014;
+
     color:white;
+
     font-weight:800;
     font-size:14px;
+
+    cursor:pointer;
+
+    transition:.2s ease;
 }
 
-/* FOOTER */
+.rules:hover{
+    background:#32151d;
+    border-color:#a84a61;
+}
+
+
+/* =========================
+   NOTE
+========================= */
 
 .note{
     text-align:center;
+
     color:#958488;
+
     font-size:11px;
     line-height:1.7;
+
     margin:22px 5px;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
     text-align:center;
+
     color:#66595c;
+
     font-size:10px;
+
     margin-top:25px;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:450px){
 
     .container{
         width:94%;
+        padding-top:15px;
     }
 
     .title{
@@ -172,8 +273,8 @@ body{
         letter-spacing:2px;
     }
 
-    .banner{
-        min-height:160px;
+    .card{
+        border-radius:15px;
     }
 
     .card-bottom{
@@ -188,15 +289,22 @@ body{
         padding:11px 15px;
         font-size:10px;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <div class="header">
 
@@ -217,263 +325,318 @@ body{
 </div>
 
 
-<!-- GROUPS -->
+
+<!-- =========================
+     GROUP LIST
+========================= -->
 
 <div class="groups">
+
 
 <!-- GROUP 1 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 1"
-loading="eager">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 1"
+        loading="eager"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 1️⃣
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 1️⃣
+        </div>
+
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/IkIlGmksVOYFe2eL4fn1Q6"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
+
+    </div>
+
 </div>
 
-<a
-class="join"
-href="https://chat.whatsapp.com/IkIlGmksVOYFe2eL4fn1Q6"
-target="_blank">
-WHATSAPP ↗
-</a>
-
-</div>
-</div>
 
 
 <!-- GROUP 2 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 2"
-loading="lazy">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 2"
+        loading="lazy"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 2️⃣
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 2️⃣
+        </div>
+
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/DoUU9uOBNMY8SUis111zYH"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
+
+    </div>
+
 </div>
 
-<a
-class="join"
-href="https://chat.whatsapp.com/DoUU9uOBNMY8SUis111zYH"
-target="_blank">
-WHATSAPP ↗
-</a>
-
-</div>
-</div>
 
 
 <!-- GROUP 3 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 3"
-loading="lazy">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 3"
+        loading="lazy"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 3️⃣
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 3️⃣
+        </div>
+
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/LGDmFh4OsXpFRJHGfsH8gB"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
+
+    </div>
+
 </div>
 
-<a
-class="join"
-href="https://chat.whatsapp.com/LGDmFh4OsXpFRJHGfsH8gB"
-target="_blank">
-WHATSAPP ↗
-</a>
-
-</div>
-</div>
 
 
 <!-- GROUP 4 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 4"
-loading="lazy">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 4"
+        loading="lazy"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 4️⃣
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 4️⃣
+        </div>
+
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/EWrQ3ec0qxE91Hh9aXCTUo"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
+
+    </div>
+
 </div>
 
-<a
-class="join"
-href="https://chat.whatsapp.com/EWrQ3ec0qxE91Hh9aXCTUo"
-target="_blank">
-WHATSAPP ↗
-</a>
-
-</div>
-</div>
 
 
 <!-- GROUP 5 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 5"
-loading="lazy">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 5"
+        loading="lazy"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 5️⃣
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 5️⃣
+        </div>
+
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/GNlRc9NnQeOJTZbI5FS748"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
+
+    </div>
+
 </div>
 
-<a
-class="join"
-href="https://chat.whatsapp.com/GNlRc9NnQeOJTZbI5FS748"
-target="_blank">
-WHATSAPP ↗
-</a>
-
-</div>
-</div>
 
 
 <!-- GROUP 6 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 6"
-loading="lazy">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 6"
+        loading="lazy"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 6️⃣
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 6️⃣
+        </div>
+
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/LEtO1ApHi6t0tpDXrdcEne"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
+
+    </div>
+
 </div>
 
-<a
-class="join"
-href="https://chat.whatsapp.com/LEtO1ApHi6t0tpDXrdcEne"
-target="_blank">
-WHATSAPP ↗
-</a>
-
-</div>
-</div>
 
 
 <!-- GROUP 7 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 7"
-loading="lazy">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 7"
+        loading="lazy"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 7️⃣
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 7️⃣
+        </div>
+
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/FJdN7uWVuwk5ScQSN8wkjp"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
+
+    </div>
+
 </div>
 
-<a class="join"
-href="https://chat.whatsapp.com/FJdN7uWVuwk5ScQSN8wkjp"
-target="_blank">
-WHATSAPP ↗
-</a>
 
-</div>
-</div>
 
 <!-- GROUP 8 -->
 
 <div class="card">
 
-<img
-class="banner"
-src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
-alt="Sheikh Family 8"
-loading="lazy">
+    <img
+        class="banner"
+        src="https://adhiit4.github.io/sheikh-family/sheikh_family_banner.jpg"
+        alt="Sheikh Family 8"
+        loading="lazy"
+    >
 
-<div class="card-bottom">
+    <div class="card-bottom">
 
-<div class="group-name">
-SHEIKH FAMILY 🏠 8️⃣
-</div>
+        <div class="group-name">
+            SHEIKH FAMILY 🏠 8️⃣
+        </div>
 
-<a class="join"
-href="https://chat.whatsapp.com/D1wmDz3gwGJ5m5ICPs5Th7?s=cl&p=a&mlu=4&ilr=4"
-target="_blank">
-WHATSAPP ↗
-</a>
+        <a
+            class="join"
+            href="https://chat.whatsapp.com/D1wmDz3gwGJ5m5ICPs5Th7?s=cl&p=a&mlu=4&ilr=4"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WHATSAPP ↗
+        </a>
 
-</div>
-</div>
-
-<a
-  class="join"
-  href="https://chat.whatsapp.com/D1wmDz3gwGJ5m5ICPs5Th7?s=cl&p=a&mlu=4&ilr=4"
-  target="_blank">
-  WHATSAPP ↗
-</a>
-
-</div>
-</div>
+    </div>
 
 </div>
 
 
-<!-- RULES -->
+</div>
+
+
+
+<!-- =========================
+     RULES
+========================= -->
 
 <button
-class="rules"
-onclick="alert(
-'RULES ⚠️\\n\\n' +
-'1. No posting links except admins.\\n\\n' +
-'2. No promotions or advertisements.\\n\\n' +
-'3. Do not spam.\\n\\n' +
-'4. Do not fight with other members.\\n\\n' +
-'5. No fake news or rumours.\\n\\n' +
-'6. Respect all members.'
-)">
-📜 VIEW GROUP RULES
+    class="rules"
+    onclick="alert(
+        'RULES ⚠️\\n\\n' +
+        '1. No posting links except admins.\\n\\n' +
+        '2. No promotions or advertisements.\\n\\n' +
+        '3. Do not spam.\\n\\n' +
+        '4. Do not fight with other members.\\n\\n' +
+        '5. No fake news or rumours.\\n\\n' +
+        '6. Respect all members.'
+    )"
+>
+    📜 VIEW GROUP RULES
 </button>
 
 
+
+<!-- =========================
+     NOTE
+========================= -->
+
 <div class="note">
 
-Better to mute group notifications if needed.<br>
-Please respect the group rules and other members.
+    Better to mute group notifications if needed.<br>
+
+    Please respect the group rules and other members.
 
 </div>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <div class="footer">
-© 2026 SHEIKH FAMILY | RZ7
+
+    © 2026 SHEIKH FAMILY | RZ7
+
 </div>
+
 
 </div>
 
